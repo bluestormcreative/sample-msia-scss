@@ -1,0 +1,343 @@
+/*  Featured members   */
+.featured_members {
+  z-index: 2;
+  .featured_members_background {
+    display:none;
+    .member_name {
+      margin-top: 10rem;
+      @media #{$topbar-media-query} {
+        padding: 1rem 0;
+        margin-top:0;
+      }
+    }
+    .member_link {
+      color: $purple;
+    }
+    img {
+      display:none;
+    }
+  }
+  .selected_container {
+    display: block;
+  }
+
+  @media #{$topbar-media-query} {
+    .featured_members_background {
+      width:86%;
+      img {
+        width:100%;
+        display: block;
+      }
+    }
+    .featured_header {
+      margin-left: -1rem !important;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      padding-left: 2rem;
+      width: 33%;
+      color: $gray_devil !important;
+      background-color: $white;
+      position: absolute;
+      top: 3rem;
+    }
+
+  }
+
+  .featured_container {
+    display:block;
+
+    @media #{$topbar-media-query} {
+      position:relative;
+      margin-top: -12rem;
+      background: linear-gradient(to bottom, rgba($white, 0) 0%, rgba($white, 1) 30%);
+    }
+  }
+  .video_slide {
+    iframe {
+      width:100%;
+      height:250px;
+      padding:0 1rem 0 1rem;
+    }
+    margin-bottom: 1rem;
+    @media #{$topbar-media-query} {
+      width:50%;
+      float:left;
+    }
+    .play_button {}
+  }
+  .video_thumbs {
+    position: absolute;
+    top: 23rem;
+    width:100%;
+    .featured_member {
+      position:relative;
+    }
+
+    .progress_slider {
+      background-color:$purple-light;
+      height: 0.25rem;
+      width: 0;
+      position: absolute;
+      bottom: 8px;
+      left: 0.6rem;
+
+    }
+    @media #{$topbar-media-query} {
+      position:absolute;
+      top:0;
+      right: -84%;
+      width:100%;
+      li {
+        clear:both;
+        width:100%;
+        padding-bottom:0.5rem;
+        cursor:pointer;
+      }
+    }
+    .grayscale {
+      @include filter(grayscale, 100%);
+    }
+  }
+}
+
+/* = Single Members & Founder Page
+-------------------------------------------------------------- */
+
+.banner-image {
+  width:100%;
+  height:rem-calc(400px);
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position: center center;
+}
+
+.single_featured_member, .page-template-page-founder {
+
+  header {
+    padding:2rem 0;
+    height:rem-calc(275px);
+    margin-bottom:2rem;
+    position:relative;
+
+    @media screen and (max-width:640px) {
+      height:auto;
+
+      .entry-title {
+        font-size:rem-calc(40px);
+        margin:2rem 0 1rem;
+      }
+    }
+
+    h4.member-location {
+      font-size:1rem;
+      color:#dadada;
+      font-family:'Proxima Nova Regular', Helvetica, sans-serif;
+    }
+    
+    .member-video {
+      a {
+        position:absolute;
+        top:rem-calc(-150px);
+
+        img {
+          box-shadow:0 0 40px 10px rgba(0,0,0,.3);
+        }
+      }
+
+      @media screen and (max-width:640px) {
+        a {
+          position:relative;
+          top:0;
+        }
+      }
+    }
+  }
+
+  .entry-content {
+    text-align:justify;
+  }
+
+  .mid-page-banner {
+    margin:5rem 0;
+    padding:5rem 0;
+    background-size:cover;
+    background-position:center center;
+
+    .quote-icon {
+      color:rgba(218, 218, 218, 0.5);
+      font-size: 7.25rem;
+      left:.5rem;
+    }
+
+    blockquote {
+      color:white;
+      font-size:1.5rem;
+      padding-top:5rem;
+      padding-left:0;
+    }
+  }
+
+  .banner-pullquote, 
+  .full-width-pullquote {
+    position:relative;
+  }
+
+  .full-width-pullquote {
+    margin:3rem 0;
+  }
+
+  .quote-icon {
+    font-family: "Lustria";
+    font-size:9.25rem;
+    line-height:1;
+    position:absolute;
+    top:0;
+    left:1.25rem;
+  }
+
+  blockquote {
+    color:black;
+    border-left:0;
+    font-size:2.2rem;
+    font-family:'Lustria';
+    font-weight:300;
+    line-height:1.2;
+    padding-top:5rem;
+  }
+
+}
+
+/* = Other Featured Members loop on featured-members single & archive page
+-------------------------------------------------------------- */
+
+.featured-members-loop {
+  margin-top:4rem;
+
+  .other-member {
+    float:left;
+    margin-bottom:2rem;
+    &:after {
+      display:table;
+      width:100%;
+    }    
+
+    .member-image {
+      img {
+        width:100%;
+        height:auto;
+        @media screen and (min-width:1024px) {
+          min-height:420px;
+        }  
+      }
+
+    }
+
+    .member-image,
+    .member-excerpt {
+      float:left;
+    }
+
+    .member-excerpt {
+      background: #dadada;
+      padding: rem-calc(50px);
+      margin-left: -2rem;
+      margin-top: 2rem;
+      @media screen and (min-width:1024px) {
+        min-height:360px;
+      }
+      @media screen and (max-width:1024px) {
+        padding:rem-calc(38px);
+        margin:0;
+      }
+      p {
+        line-height:1.2;
+        @media screen and (max-width:1024px) {
+          font-size:.7rem;
+        }
+      }
+
+      h4 {
+        margin-bottom:2rem;
+        font-size:2rem;
+        @media screen and (max-width:1024px) {
+          margin-bottom:1.5rem;
+        }
+        a {
+          text-decoration: none;
+          color: #535353;
+          font-size:1.5rem;
+          @media screen and (max-width:1024px) {
+            font-size:1.3rem;
+          }
+        }
+      }
+
+      a {
+        text-decoration: underline;
+        font-size:1rem;
+        &:hover {
+          text-decoration: none;
+        }
+        @media screen and (max-width:1024px) {
+          font-size:.7rem;
+        }
+        @media screen and (max-width:768px) {
+          font-size:1rem;
+        }
+      }
+    }
+
+    &:nth-of-type(even){
+      .member-image, 
+      .member-excerpt {
+        float:right;
+      }
+
+      .member-excerpt {
+        margin-left:0;
+        margin-right:-2rem;
+        @media screen and (max-width:1024px) {
+          margin:0;
+        }
+      }
+
+    }
+
+    @media screen and (max-width:768px) {
+      .member-image, 
+      .member-excerpt {
+        float:none;
+        clear:both;
+        margin:0;
+        width:100%;
+        height:auto;
+        p {
+          font-size:1rem;
+          }
+        } 
+      &:nth-of-type(even) {
+        .member-image, 
+        .member-excerpt {
+          margin:0;
+        }
+      }  
+
+    }
+
+  }
+
+}
+
+/* = Archive Featured Members view
+-------------------------------------------------------------- */
+
+.post-type-archive-featured-members {
+  .featured-members-loop {
+    h3 {
+      text-align:center;
+      margin-bottom:2rem;
+      padding-bottom:1rem;
+      border-bottom:1px solid #ddd;
+    }
+  }
+}
